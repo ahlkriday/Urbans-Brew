@@ -1,93 +1,45 @@
 /* GLOBAL RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { 
-    height: auto; 
-    overflow-x: hidden; 
-    background-color: #0f0f0f; 
-    color: #eaeaea; 
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-}
+html, body { height: auto; overflow-x: hidden; background-color: #0f0f0f; color: #eaeaea; font-family: 'Montserrat', sans-serif; line-height: 1.6; }
 
-/* TYPOGRAPHY */
 h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: #f5f5f5; }
 
-/* THE NAV - FIXED & BLURRED */
-.navbar {
-    position: fixed;
-    top: 0; width: 100%;
-    background: rgba(15, 15, 15, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 2000;
-    border-bottom: 1px solid #222;
-}
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* THE NAV */
+.navbar { position: fixed; top: 0; width: 100%; background: rgba(15, 15, 15, 0.95); backdrop-filter: blur(10px); z-index: 2000; border-bottom: 1px solid #222; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; }
 .logo { font-family: 'Bodoni Moda', serif; font-size: 1.4rem; color: #c6a15b; font-weight: bold; }
 .nav-links { display: flex; gap: 20px; list-style: none; }
 .nav-links a { text-decoration: none; color: #fff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 
-/* SECTIONS */
-section { padding: 100px 5% 60px; position: relative; }
-.container { max-width: 1100px; margin: 0 auto; width: 100%; }
-
-/* HERO - MIN-HEIGHT IS KEY FOR SCROLLING */
+/* HERO SECTION - Experience Focused */
 .hero {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1501339817302-cd4f6bc4a3c7?q=80&w=1500') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1500') center/cover;
 }
 
 /* MENU GRID */
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
 .menu-card {
-    position: relative;
-    background: #161616;
-    padding: 40px;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.4s ease;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    border: 1px solid #222;
+    position: relative; background: #161616; padding: 35px; border-radius: 12px; overflow: hidden;
+    transition: 0.4s ease; min-height: 220px; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid #222;
 }
-.menu-hover-img {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; opacity: 0; transition: 0.5s; z-index: 1;
-}
+.menu-hover-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: 0.5s; z-index: 1; }
 .menu-card:hover .menu-hover-img { opacity: 0.4; }
-.menu-card:hover { border-color: #c6a15b; transform: translateY(-10px); }
+.menu-card:hover { border-color: #c6a15b; transform: translateY(-8px); }
 .menu-info { position: relative; z-index: 2; }
-.menu-info span { color: #c6a15b; font-weight: bold; font-size: 1.2rem; }
+.menu-info span { color: #c6a15b; font-weight: bold; font-size: 1.1rem; }
 
-/* LIGHT MODE */
-.light-mode { background-color: #fdfcf9; color: #1a1a1a; }
-.light-mode .navbar { background: rgba(253, 252, 249, 0.95); border-bottom: 1px solid #ddd; }
-.light-mode h1, .light-mode h2, .light-mode h3, .light-mode p, .light-mode .nav-links a, .light-mode .logo { color: #1a1a1a !important; }
-.light-mode .menu-card { background: #fff; border-color: #ddd; }
+/* PREMIUM LIGHT MODE (Café Vibes) */
+.light-mode { background-color: #fdfaf6; color: #2c2420; } /* Cream background */
+.light-mode .navbar { background: rgba(253, 250, 246, 0.95); border-bottom: 1px solid #e8e2d9; }
+.light-mode h1, .light-mode h2, .light-mode h3, .light-mode .logo { color: #2c2420 !important; }
+.light-mode p, .light-mode .nav-links a { color: #5a4a42 !important; }
+.light-mode .menu-card { background: #ffffff; border-color: #e8e2d9; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
-/* REVEAL ANIMATION */
+/* REVEAL */
 .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
 .reveal.show { opacity: 1; transform: translateY(0); }
-
-/* BUTTONS */
-.btn-primary { 
-    background: #c6a15b; color: #000 !important; 
-    padding: 12px 30px; border-radius: 50px; 
-    text-decoration: none; font-weight: 600; display: inline-block;
-}
+.btn-primary { background: #c6a15b; color: #fff !important; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; }
+.btn-primary:hover { background: #a8874a; }

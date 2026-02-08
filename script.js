@@ -1,5 +1,4 @@
-// Smooth reveal on scroll logic
-const reveal = () => {
+const scrollReveal = () => {
     const reveals = document.querySelectorAll('.reveal');
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
@@ -11,5 +10,5 @@ const reveal = () => {
     }
 }
 
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal); // Trigger on load for top elements
+window.addEventListener('scroll', scrollReveal);
+window.addEventListener('load', scrollReveal);

@@ -1,7 +1,6 @@
-/* THE BISTRO MASTER STYLESHEET */
+/* MASTER PITCH STYLESHEET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
 body { 
     font-family: 'Montserrat', sans-serif; 
     background-color: #0a0a0a; 
@@ -10,192 +9,64 @@ body {
     overflow-x: hidden; 
 }
 
-h1, h2, h3 { 
-    font-family: 'Bodoni Moda', serif; 
-    color: #f5f5f5; 
-    letter-spacing: 1px;
-}
+h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: #f5f5f5; }
 
-/* SPACIOUS CONTAINER SYSTEM */
+/* SPACIOUS LAYOUT */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 100px 5%; /* Increased padding for breathing room */
+    padding: 120px 5%;
 }
 
-/* NAVBAR - PREMIUM BLUR */
-.navbar { 
-    position: fixed; 
-    top: 0; width: 100%; 
-    background: rgba(10, 10, 10, 0.9); 
-    backdrop-filter: blur(15px); 
-    z-index: 3000; 
-    border-bottom: 1px solid rgba(255,255,255,0.05); 
-}
+/* NAVBAR (NO THEME TOGGLE) */
+.navbar { position: fixed; top: 0; width: 100%; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(15px); z-index: 3000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.nav-container { max-width: 1200px; margin: auto; padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Bodoni Moda', serif; font-size: 1.5rem; color: #c6a15b; font-weight: bold; letter-spacing: 2px; }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a { text-decoration: none; color: #fff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
 
-.nav-container { 
-    max-width: 1200px; 
-    margin: auto; 
-    padding: 20px 5%; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-}
-
-.logo { 
-    font-family: 'Bodoni Moda', serif; 
-    font-size: 1.5rem; 
-    color: #c6a15b; 
-    font-weight: bold; 
-    text-transform: uppercase;
-}
-
-.nav-links { display: flex; gap: 35px; list-style: none; }
-.nav-links a { 
-    text-decoration: none; 
-    color: #fff; 
-    font-size: 0.8rem; 
-    text-transform: uppercase; 
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-.nav-links a:hover { color: #c6a15b; }
-
-/* HERO - BOLD & SPACIOUS */
-.hero { 
-    height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1500') center/cover; 
-}
-
-/* THE BUTTON FIX (No blue, correct border) */
-.btn-primary { 
-    background: transparent; 
-    color: #c6a15b !important; 
-    padding: 15px 40px; 
-    border: 1px solid #c6a15b; 
-    border-radius: 0; /* Square edges for luxury feel */
-    text-decoration: none; 
-    font-weight: 600; 
-    display: inline-block; 
-    transition: 0.4s ease;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.btn-primary:hover { 
-    background: #c6a15b; 
-    color: #000 !important; 
-}
-
-/* MASTER MENU REFINEMENT */
-.menu-section {
-    max-width: 900px; /* Narrower for better readability */
-    margin: 0 auto;
-    padding: 100px 5%;
-}
-
-.menu-category-title {
-    font-family: 'Bodoni Moda', serif;
-    color: #c6a15b;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-.menu-list {
-    list-style: none;
-    margin-bottom: 80px;
-}
-
+/* COMPACT MENU LIST LOGIC */
+.menu-list-container { max-width: 800px; margin: 0 auto; padding-top: 40px; }
 .menu-item {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     position: relative;
-    cursor: pointer;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(198, 161, 91, 0.1);
+    transition: 0.3s ease;
 }
 
-.menu-item-name {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.4rem;
-    color: #f5f5f5;
-    background: #0a0a0a; /* Matches body bg */
-    padding-right: 15px;
-    z-index: 2;
-}
+.menu-item:hover { transform: translateX(10px); }
 
-.menu-item-dots {
-    flex: 1;
-    border-bottom: 1px dotted rgba(198, 161, 91, 0.3);
-    margin: 0 10px;
-}
+.item-name { font-family: 'Bodoni Moda', serif; font-size: 1.3rem; color: #f5f5f5; }
+.item-price { font-weight: 600; color: #c6a15b; }
+.item-desc { display: block; font-size: 0.85rem; color: #888; font-style: italic; margin-top: 4px; }
 
-.menu-item-price {
-    font-family: 'Montserrat', sans-serif;
-    color: #c6a15b;
-    font-weight: 600;
-    padding-left: 15px;
-    background: #0a0a0a;
-    z-index: 2;
-}
-
-.menu-item-desc {
-    display: block;
-    font-size: 0.85rem;
-    color: #888;
-    margin-top: 5px;
-    font-style: italic;
-}
-
-/* REFINED HOVER IMAGE (Small & Classy) */
-.menu-item-preview {
+/* HOVER IMAGE (REFINED) */
+.menu-img-preview {
     position: absolute;
-    width: 150px;
-    height: 100px;
-    right: -180px;
-    top: -20px;
+    width: 120px;
+    height: 80px;
+    right: -150px;
+    top: 0;
     opacity: 0;
-    transform: translateX(-20px);
-    transition: 0.5s ease;
+    border: 1px solid #c6a15b;
+    transition: 0.4s ease;
     pointer-events: none;
-    border: 1px solid #c6a15b;
-    z-index: 10;
+    object-fit: cover;
 }
+.menu-item:hover .menu-img-preview { opacity: 1; right: -130px; }
 
-.menu-item:hover .menu-item-preview {
-    opacity: 1;
-    transform: translateX(0);
-}
+/* ANIMATION CLASSES */
+.reveal { opacity: 0; transform: translateY(40px); transition: 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-/* Responsive fix for preview */
-@media (max-width: 1100px) {
-    .menu-item-preview { display: none; }
+/* BUTTONS */
+.btn-primary { 
+    background: transparent; border: 1px solid #c6a15b; color: #c6a15b; 
+    padding: 15px 40px; text-decoration: none; text-transform: uppercase; 
+    font-size: 0.8rem; letter-spacing: 2px; transition: 0.4s;
 }
-
-/* UPDATED ANIMATIONS */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(50px); 
-    transition: all 1.2s cubic-bezier(0.215, 0.61, 0.355, 1); 
-}
-
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-}
-
-/* MAP RESIZE */
-.map-frame {
-    width: 100%;
-    max-width: 900px; /* Reduced size */
-    height: 400px;
-    margin: 50px auto;
-    border: 1px solid #c6a15b;
-    filter: grayscale(1) invert(0.9);
-}
+.btn-primary:hover { background: #c6a15b; color: #000; }

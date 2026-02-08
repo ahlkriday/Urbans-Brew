@@ -21,13 +21,35 @@ h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: #f5f5f5; }
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1500') center/cover; 
 }
 
-/* PREMIUM EARTH-TONE LIGHT MODE */
-.light-mode { background-color: #fdfaf6; color: #3e2f28; } /* Warm Cream/Parchment */
-.light-mode .navbar { background: rgba(253, 250, 246, 0.98); border-bottom: 1px solid #e8e2d9; }
-.light-mode h1, .light-mode h2, .light-mode h3, .light-mode .logo { color: #3e2f28 !important; }
-.light-mode p, .light-mode .nav-links a { color: #5a4a42 !important; } /* Soft Coffee Brown */
-.light-mode .menu-card { background: #ffffff; border-color: #e8e2d9; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+/* LIGHT MODE - Earthy Soil Tone */
+.light-mode {
+  background-color: #d7ccc8; /* Light soil/earthy tone */
+  color: #3e2723; /* Deep coffee brown text for contrast */
+}
 
+.light-mode .navbar {
+  background: rgba(215, 204, 200, 0.9);
+  border-bottom: 1px solid #bcaaa4;
+}
+
+.light-mode .nav-links a,
+.light-mode .logo {
+  color: #3e2723;
+}
+
+.light-mode h1, .light-mode h2, .light-mode h3 {
+  color: #2d1b18;
+}
+
+.light-mode .menu-card {
+  background-color: #efebe9;
+  border: 1px solid #bcaaa4;
+  color: #3e2723;
+}
+
+.light-mode p {
+  color: #4e342e;
+}
 /* MENU GRID */
 .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
 .menu-card {

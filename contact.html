@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | The Coffee Bistro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | The Coffee Bistro</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar"><div class="nav-container"><div class="logo">THE COFFEE BISTRO</div><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="contact.html">Contact</a></li><li><button id="themeToggle" style="background:none; border:1px solid #c6a15b; color:#c6a15b; padding:5px 12px; border-radius:20px; cursor:pointer;">☀︎ / ☾</button></li></ul></div></nav>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">The Coffee Bistro</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="themeToggle" class="theme-btn">☀︎ / ☾</button></li>
+    </ul>
+  </div>
+</nav>
 
-    <section class="container reveal" style="padding-top: 140px; text-align: center;">
-        <small style="color:#c6a15b; letter-spacing:3px;">SAY HELLO</small>
-        <h1 style="font-size: 3.5rem; margin-top: 10px;">Contact Us</h1>
-    </section>
+<section class="reveal" style="padding-top: 150px; text-align: center;">
+  <div class="container">
+    <h1 style="margin-bottom: 20px;">Get in Touch</h1>
+    <p style="margin: 0 auto 60px;">Whether you have a question about our beans or want to host an event, we'd love to hear from you.</p>
 
-    <section class="container reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-top: 20px;">
-        <div>
-            <h3 style="color:#c6a15b; margin-bottom: 15px;">Location</h3>
-            <p>Sector 35D, Kharghar,<br>Navi Mumbai, Maharashtra</p>
-        </div>
-        <div>
-            <h3 style="color:#c6a15b; margin-bottom: 15px;">Hours</h3>
-            <p>Monday — Sunday<br>08:00 AM — 11:00 PM</p>
-        </div>
-        <div>
-            <h3 style="color:#c6a15b; margin-bottom: 15px;">Enquiries</h3>
-            <p>+91 98765 43210<br>hello@thecoffeebistro.com</p>
-        </div>
-    </section>
-
-    <div class="reveal" style="width: 90%; max-width: 1200px; height: 500px; margin: 60px auto; border-radius: 20px; overflow: hidden; border: 1px solid #c6a15b;">
-        <iframe 
-            src="http://googleusercontent.com/maps.google.com/5" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left;">
+      <div>
+        <h3 style="color: #c6a15b; margin-bottom: 15px;">Visit Us</h3>
+        <p>Shop 6 & 7, Greenwood's Apt,<br>Sector 35E, Kharghar,<br>Navi Mumbai, 410210</p>
+      </div>
+      <div>
+        <h3 style="color: #c6a15b; margin-bottom: 15px;">Hours</h3>
+        <p>Monday – Sunday<br>11:00 AM – 11:00 PM</p>
+      </div>
+      <div>
+        <h3 style="color: #c6a15b; margin-bottom: 15px;">Contact</h3>
+        <p><strong>Phone:</strong> +91 93216 68855</p>
+        <p><strong>Email:</strong> hello@thecoffeebistro.com</p>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <div style="margin-top: 80px; height: 450px; border-radius: 15px; overflow: hidden; border: 1px solid #333;">
+      <iframe 
+        src="https://maps.google.com/?cid=1981472092005536536&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" 
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>

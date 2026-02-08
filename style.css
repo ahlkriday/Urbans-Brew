@@ -5,51 +5,44 @@ body { font-family: 'Montserrat', sans-serif; background-color: #0f0f0f; color: 
 
 h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: #f5f5f5; }
 
-/* NAVBAR FIX */
-.navbar { position: fixed; top: 0; width: 100%; background: rgba(15,15,15,0.98); backdrop-filter: blur(12px); z-index: 3000; border-bottom: 1px solid #222; }
+/* THE EARTHY LIGHT MODE TEMPLATE */
+.light-mode { background-color: #C9A992 !important; color: #3b2a1e; } /* Main Background */
+
+.light-mode .navbar { 
+    background: rgba(201, 169, 146, 0.95); 
+    border-bottom: 1px solid #AB7854; 
+}
+
+.light-mode h1, .light-mode h2, .light-mode h3, .light-mode .logo { 
+    color: #3b2a1e !important; 
+}
+
+.light-mode .nav-links a { 
+    color: #3b2a1e !important; 
+}
+
+.light-mode .menu-card { 
+    background-color: #BA9173; /* Earthy Card Tone */
+    border: 1px solid #AB7854; 
+    box-shadow: 0 8px 24px rgba(171, 120, 84, 0.15);
+}
+
+.light-mode p { 
+    color: #4a3728; 
+}
+
+.light-mode .btn-primary {
+    background: #AB7854;
+    color: #fff !important;
+}
+
+/* NAVBAR */
+.navbar { position: fixed; top: 0; width: 100%; background: rgba(15,15,15,0.95); backdrop-filter: blur(12px); z-index: 3000; border-bottom: 1px solid #222; }
 .nav-container { max-width: 1200px; margin: auto; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: 'Bodoni Moda', serif; font-size: 1.4rem; color: #c6a15b; font-weight: bold; }
+.logo { font-family: 'Bodoni Moda', serif; font-size: 1.4rem; color: #AB7854; font-weight: bold; }
 .nav-links { display: flex; gap: 20px; list-style: none; }
 .nav-links a { text-decoration: none; color: #fff; font-size: 0.8rem; text-transform: uppercase; }
 
-/* HERO */
-.hero { 
-    min-height: 100vh; 
-    padding-top: 120px; 
-    display: flex; 
-    align-items: center; 
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1500') center/cover; 
-}
-
-/* LIGHT MODE - Earthy Soil Tone */
-.light-mode {
-  background-color: #d7ccc8; /* Light soil/earthy tone */
-  color: #3e2723; /* Deep coffee brown text for contrast */
-}
-
-.light-mode .navbar {
-  background: rgba(215, 204, 200, 0.9);
-  border-bottom: 1px solid #bcaaa4;
-}
-
-.light-mode .nav-links a,
-.light-mode .logo {
-  color: #3e2723;
-}
-
-.light-mode h1, .light-mode h2, .light-mode h3 {
-  color: #2d1b18;
-}
-
-.light-mode .menu-card {
-  background-color: #efebe9;
-  border: 1px solid #bcaaa4;
-  color: #3e2723;
-}
-
-.light-mode p {
-  color: #4e342e;
-}
 /* MENU GRID */
 .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
 .menu-card {
@@ -59,13 +52,4 @@ h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: #f5f5f5; }
 }
 .menu-hover-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; filter: grayscale(100%); transition: 0.5s; z-index: 1; }
 .menu-card:hover .menu-hover-img { opacity: 0.5; filter: grayscale(0%); }
-.menu-card:hover { border-color: #c6a15b; transform: translateY(-8px); }
-.menu-info { position: relative; z-index: 2; }
-.menu-info span { color: #c6a15b; font-weight: bold; font-size: 1.1rem; }
-
-/* SECTIONS */
-section { padding: 80px 8%; }
-.container { max-width: 1100px; margin: 0 auto; }
-.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
-.reveal.show { opacity: 1; transform: translateY(0); }
-.btn-primary { background: #c6a15b; color: #fff !important; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: inline-block; }
+.menu-card:hover { border-color: #AB7854; transform: translateY(-8px); }

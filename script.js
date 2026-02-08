@@ -8,10 +8,9 @@ const scrollReveal = () => {
         if (elementTop < windowHeight - elementVisible) {
             setTimeout(() => {
                 element.classList.add('active');
-            }, index * 40); 
+            }, index * 50); // Clean staggered entry
         }
     });
 }
-
 window.addEventListener('scroll', scrollReveal);
 window.addEventListener('load', scrollReveal);

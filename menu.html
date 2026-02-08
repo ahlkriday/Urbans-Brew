@@ -3,166 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu | Urbans Brew</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <title>Menu | The Coffee Bistro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav class="navbar">
   <div class="nav-container">
-    <div class="logo">Urbans Brew</div>
-
+    <div class="logo">The Coffee Bistro</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="menu.html">Menu</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li>
-        <button id="themeToggle" class="theme-btn">☀︎ / ☾</button>
-      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button id="themeToggle" class="theme-btn">☀︎ / ☾</button></li>
     </ul>
   </div>
 </nav>
 
-  <!-- HEADER -->
 <section class="menu-hero reveal">
     <div class="container center">
       <small>Handcrafted With Care</small>
       <h1>Our Menu</h1>
-      <p>Thoughtfully brewed, freshly prepared.</p>
     </div>
-  </section>
+</section>
 
-  <!-- HOT COFFEE -->
-  <section class="menu-section reveal">
+<section class="menu-section reveal">
     <div class="container">
-      <h2>Hot Coffee</h2>
-
       <div class="menu-grid">
         <div class="menu-card">
-          <h3>Espresso</h3>
-          <p>Pure, intense, and bold.</p>
-          <span>₹180</span>
+          <div class="menu-info">
+            <h3>Classic Espresso</h3>
+            <p>Rich, bold, and perfectly balanced.</p>
+            <span>₹180</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1510707577719-5d6874021d47?auto=format&fit=crop&w=400" class="menu-hover-img">
         </div>
 
         <div class="menu-card">
-          <h3>Americano</h3>
-          <p>Smooth espresso diluted to perfection.</p>
-          <span>₹200</span>
+          <div class="menu-info">
+            <h3>Velvet Latte</h3>
+            <p>Smooth espresso with steamed milk.</p>
+            <span>₹240</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1541167760496-162955ed8a9f?auto=format&fit=crop&w=400" class="menu-hover-img">
         </div>
 
         <div class="menu-card">
-          <h3>Cappuccino</h3>
-          <p>Espresso with steamed milk & foam.</p>
-          <span>₹230</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Café Latte</h3>
-          <p>Velvety milk with rich espresso.</p>
-          <span>₹240</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Mocha</h3>
-          <p>Chocolate-infused espresso delight.</p>
-          <span>₹260</span>
+          <div class="menu-info">
+            <h3>Butter Croissant</h3>
+            <p>Flaky, golden, freshly baked.</p>
+            <span>₹180</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=400" class="menu-hover-img">
         </div>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- COLD BREWS -->
-  <section class="menu-section alt reveal">
-    <div class="container">
-      <h2>Cold Brews</h2>
-
-      <div class="menu-grid">
-        <div class="menu-card">
-          <h3>Classic Cold Brew</h3>
-          <p>Slow brewed for a smooth finish.</p>
-          <span>₹260</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Iced Latte</h3>
-          <p>Chilled espresso with milk.</p>
-          <span>₹240</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Nitro Brew</h3>
-          <p>Infused with nitrogen for a creamy feel.</p>
-          <span>₹300</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEA & ALTERNATIVES -->
-  <section class="menu-section reveal">
-    <div class="container">
-      <h2>Tea & Alternatives</h2>
-
-      <div class="menu-grid">
-        <div class="menu-card">
-          <h3>Masala Chai</h3>
-          <p>Traditional Indian spiced tea.</p>
-          <span>₹120</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Matcha Latte</h3>
-          <p>Earthy, smooth Japanese matcha.</p>
-          <span>₹280</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Hot Chocolate</h3>
-          <p>Rich cocoa with steamed milk.</p>
-          <span>₹220</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DESSERTS -->
-  <section class="menu-section alt reveal">
-    <div class="container">
-      <h2>Snacks & Desserts</h2>
-
-      <div class="menu-grid">
-        <div class="menu-card">
-          <h3>Butter Croissant</h3>
-          <p>Flaky, golden, freshly baked.</p>
-          <span>₹180</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Avocado Toast</h3>
-          <p>Sourdough topped with fresh avocado.</p>
-          <span>₹280</span>
-        </div>
-
-        <div class="menu-card">
-          <h3>Blueberry Muffin</h3>
-          <p>Soft, sweet, and packed with berries.</p>
-          <span>₹160</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Urbans Brew</p>
-    <p><a href="index.html">Back to Home</a></p>
-  </footer>
 <script src="script.js"></script>
 </body>
 </html>

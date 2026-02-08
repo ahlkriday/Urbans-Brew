@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Coffee Bistro | Experience Comfort</title>
+    <title>The Coffee Bistro | Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,27 +15,36 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><button id="themeToggle" style="background:none; border:1px solid #c6a15b; color:#c6a15b; padding:5px 10px; border-radius:20px; cursor:pointer;">☀︎ / ☾</button></li>
+                <li><button id="themeToggle" style="background:none; border:1px solid #c6a15b; color:#c6a15b; padding:5px 12px; border-radius:20px; cursor:pointer;">☀︎ / ☾</button></li>
             </ul>
         </div>
     </nav>
 
     <section class="hero reveal">
-        <div class="container" style="max-width: 1100px; margin: 0 auto;">
-            <small style="color:#c6a15b; letter-spacing:3px;">KHARGHAR SECTOR 35D</small>
-            <h1 style="font-size: clamp(2.5rem, 8vw, 5rem); margin: 20px 0;">Beyond Just <br>A Cup.</h1>
-            <p style="max-width: 550px; font-size: 1.1rem; margin-bottom: 30px;">
-                The Coffee Bistro is where the aroma of freshly roasted beans meets the warmth of slow conversations. 
-                Whether it's a deep-focus study session or a quiet morning escape, we've designed every corner for your comfort.
-            </p>
-            <a href="menu.html" class="btn-primary">Experience the Menu</a>
+        <div class="container">
+            <small style="color:#c6a15b; letter-spacing:3px;">EST. 2026</small>
+            <h1 style="font-size: clamp(3rem, 8vw, 5rem); line-height: 1.1; margin: 20px 0;">Where Coffee<br>Meets Comfort</h1>
+            <p style="max-width: 500px; margin-bottom: 30px;">A cozy neighborhood café in Kharghar Sector 35D, serving handcrafted coffee and slow mornings.</p>
+            <a href="menu.html" class="btn-primary">View Full Menu</a>
         </div>
     </section>
 
-    <section class="reveal" style="text-align: center; padding: 120px 5%;">
-        <div class="container" style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">The Ritual of Slowing Down</h2>
-            <p>At The Coffee Bistro, we don't rush the process. Our beans are ethically sourced and brewed with intention, ensuring that every sip is a reminder to breathe and enjoy the moment. This isn't just a café; it's your third space.</p>
+    <section class="container reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: center;">
+        <div>
+            <h2>Our Philosophy</h2>
+            <p>At The Coffee Bistro, we believe coffee is a ritual. Every cup is brewed with intention, every space designed to slow you down. From ethically sourced beans to minimal interiors, we focus on quality, calm, and community.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" style="width: 100%; border-radius: 15px;" alt="Aesthetic Brew">
+    </section>
+
+    <section class="reveal" style="background: rgba(255,255,255,0.02); text-align: center;">
+        <div class="container">
+            <h2>Customer Favorites</h2>
+            <div class="menu-grid">
+                <div class="menu-card"><div class="menu-info"><h3>Velvet Latte</h3><span>₹240</span></div><img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?q=80&w=600" class="menu-hover-img"></div>
+                <div class="menu-card"><div class="menu-info"><h3>Cold Brew</h3><span>₹260</span></div><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=600" class="menu-hover-img"></div>
+                <div class="menu-card"><div class="menu-info"><h3>Classic Espresso</h3><span>₹180</span></div><img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=600" class="menu-hover-img"></div>
+            </div>
         </div>
     </section>
 

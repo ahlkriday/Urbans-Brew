@@ -1,13 +1,16 @@
 const scrollReveal = () => {
     const reveals = document.querySelectorAll('.reveal');
-    for (let i = 0; i < reveals.length; i++) {
+    reveals.forEach((element, index) => {
         const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
+        
         if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add('active');
+            setTimeout(() => {
+                element.classList.add('active');
+            }, index * 40); 
         }
-    }
+    });
 }
 
 window.addEventListener('scroll', scrollReveal);

@@ -1,39 +1,66 @@
-// 1. Scroll Reveal Animation 
-// This makes sections fade and slide up as you scroll down
-const observerOptions = {
-  threshold: 0.15, // Trigger when 15% of the section is visible
-  rootMargin: "0px 0px -50px 0px" // Slight offset for a smoother feel
+/**
+ * THE COFFEE BISTRO - CORE ENGINE
+ * Handles: Scroll Animations, Theme Management, and UI Logic
+ */
+
+// 1. SCROLL REVEAL ANIMATION
+// Uses Intersection Observer for high-performance scroll triggers
+const revealCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            // Stop observing once shown to save resources
+            observer.unobserve(entry.target); 
+        }
+    });
 };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+const revealOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px" // Triggers slightly before element enters view
+};
+
+const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+// Initialize observers on all elements with .reveal class
+document.addEventListener("DOMContentLoaded", () => {
+    const revealElements = document.querySelectorAll(".reveal");
+    revealElements.forEach(el => revealObserver.observe(el));
+});
+
+
+// 2. THEME MANAGEMENT (DARK / LIGHT MODE)
+const themeToggle = document.getElementById("themeToggle");
+
+const toggleTheme = () => {
+    const isLight = document.body.classList.toggle("light-mode");
+    // Save state to local storage for persistent experience
+    localStorage.setItem("bistro-theme", isLight ? "light" : "dark");
+};
+
+// Apply saved theme on page load
+const applySavedTheme = () => {
+    const savedTheme = localStorage.getItem("bistro-theme");
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
     }
-  });
-}, observerOptions);
+};
 
-// Observe all elements with the 'reveal' class
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-
-// 2. Theme Toggle (Dark / Light Mode)
-const toggleBtn = document.getElementById("themeToggle");
-
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-    
-    // Optional: Save preference to local storage so it stays on page change
-    const isLight = document.body.classList.contains("light-mode");
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-  });
+if (themeToggle) {
+    themeToggle.addEventListener("click", toggleTheme);
 }
 
-// 3. Load Saved Theme on Page Load
-window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
-    document.body.classList.add("light-mode");
-  }
+// Ensure theme is applied as soon as DOM is ready
+applySavedTheme();
+
+
+// 3. NAV SCROLL EFFECT
+// Adds a subtle shadow/background change to navbar when scrolling
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.3)";
+    } else {
+        navbar.style.boxShadow = "none";
+    }
 });

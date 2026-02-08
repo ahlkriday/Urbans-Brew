@@ -1,3 +1,4 @@
+/* RESET & CORE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -6,31 +7,58 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #0f0f0f;
   color: #eaeaea;
+  line-height: 1.6;
   transition: background 0.5s ease;
 }
 
-h1, h2, h3 {
-  font-family: 'Bodoni Moda', serif;
-  color: #f5f5f5;
+h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: #f5f5f5; margin-bottom: 1rem; }
+p { color: #cfcfcf; margin-bottom: 1rem; }
+
+/* THE "CENTERING" FIX */
+.container {
+  max-width: 1200px;
+  margin: 0 auto !important; /* Forces centering */
+  padding: 0 5vw;
+  width: 100%;
 }
 
-/* Light Mode Fixes */
-.light-mode { background-color: #fdfcf9; color: #1a1a1a; }
-.light-mode h1, .light-mode h2, .light-mode h3, .light-mode p, .light-mode .nav-links a { 
-  color: #1a1a1a !important; 
-}
-.light-mode .menu-card { background: #ffffff; border: 1px solid #e0e0e0; }
-.light-mode .navbar { background: rgba(253, 252, 249, 0.85); }
+.center { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-/* Menu Card Hover Magic */
+/* NAVBAR */
+.navbar { position: fixed; top: 0; width: 100%; background: rgba(15,15,15,0.9); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #333; }
+.nav-container { max-width: 1200px; margin: auto; padding: 15px 5vw; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Bodoni Moda', serif; font-size: 1.5rem; color: #c6a15b; }
+.nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: #eaeaea; font-size: 0.9rem; letter-spacing: 1px; }
+
+/* HERO SECTION */
+.hero { 
+  height: 80vh; 
+  display: flex; 
+  align-items: center; 
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1500') center/cover;
+}
+
+/* MENU GRID & HOVER EFFECT */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  width: 100%;
+}
+
 .menu-card {
   position: relative;
-  background: #161616;
-  padding: 40px;
-  border-radius: 16px;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.4s ease;
-  cursor: pointer;
+  transition: transform 0.3s ease;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .menu-hover-img {
@@ -38,25 +66,26 @@ h1, h2, h3 {
   top: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: 0;
+  opacity: 0; /* Hidden by default */
   transition: opacity 0.4s ease;
   z-index: 1;
 }
 
-.menu-card:hover .menu-hover-img { opacity: 0.25; }
-.menu-card:hover { transform: translateY(-10px); }
+.menu-card:hover .menu-hover-img { opacity: 0.3; }
+.menu-card:hover { transform: translateY(-5px); border: 1px solid #c6a15b; }
+.menu-info { position: relative; z-index: 2; pointer-events: none; }
+.menu-card span { color: #c6a15b; font-weight: bold; font-size: 1.1rem; }
 
-.menu-info { position: relative; z-index: 2; }
-.menu-card span { color: #c6a15b; font-weight: 500; font-size: 1.2rem; }
+/* LIGHT MODE OVERRIDES */
+.light-mode { background-color: #fdfcf9; color: #1a1a1a; }
+.light-mode .navbar { background: rgba(253, 252, 249, 0.9); border-bottom: 1px solid #ddd; }
+.light-mode h1, .light-mode h2, .light-mode h3, .light-mode p, .light-mode .nav-links a, .light-mode .logo { color: #1a1a1a !important; }
+.light-mode .menu-card { background: #fff; border: 1px solid #eee; }
 
-/* Navbar */
-.navbar { position: fixed; top: 0; width: 100%; background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); z-index: 1000; }
-.nav-container { max-width: 1200px; margin: auto; padding: 20px 8vw; display: flex; justify-content: space-between; align-items: center; }
-.nav-links { display: flex; gap: 30px; list-style: none; }
-.nav-links a { text-decoration: none; color: #eaeaea; transition: color 0.3s; }
-.nav-links a:hover { color: #c6a15b; }
+/* BUTTONS */
+.btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; display: inline-block; transition: 0.3s; }
+.btn-primary { background: #c6a15b; color: #000 !important; font-weight: 600; }
 
-/* Rest of your existing button/reveal styles go here... */
-.btn-primary { background: #c6a15b; color: #0f0f0f; border-radius: 30px; padding: 12px 24px; text-decoration: none; }
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+/* REVEAL ANIMATION */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
 .reveal.show { opacity: 1; transform: translateY(0); }

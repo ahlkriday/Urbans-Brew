@@ -5,45 +5,36 @@ body { font-family: 'Montserrat', sans-serif; background-color: #0f0f0f; color: 
 
 h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: #f5f5f5; }
 
-/* THE EARTHY LIGHT MODE TEMPLATE */
-.light-mode { background-color: #C9A992 !important; color: #3b2a1e; } /* Main Background */
+/* THE "COFFEE SOIL" LIGHT MODE - STICKING TO YOUR HEX CODES */
+.light-mode { 
+    background-color: #C9A992 !important; /* Earthy Parchment Background */
+    color: #3b2a1e !important; 
+} 
 
 .light-mode .navbar { 
-    background: rgba(201, 169, 146, 0.95); 
+    background: rgba(201, 169, 146, 0.98) !important; 
     border-bottom: 1px solid #AB7854; 
 }
 
-.light-mode h1, .light-mode h2, .light-mode h3, .light-mode .logo { 
-    color: #3b2a1e !important; 
-}
-
-.light-mode .nav-links a { 
+.light-mode h1, .light-mode h2, .light-mode h3, .light-mode .logo, .light-mode .nav-links a { 
     color: #3b2a1e !important; 
 }
 
 .light-mode .menu-card { 
-    background-color: #BA9173; /* Earthy Card Tone */
+    background-color: #BA9173 !important; /* Soft Clay Card Tone */
     border: 1px solid #AB7854; 
-    box-shadow: 0 8px 24px rgba(171, 120, 84, 0.15);
 }
 
-.light-mode p { 
-    color: #4a3728; 
-}
+.light-mode p { color: #4a3728; }
 
-.light-mode .btn-primary {
-    background: #AB7854;
-    color: #fff !important;
-}
-
-/* NAVBAR */
+/* NAVBAR & ACCENTS */
 .navbar { position: fixed; top: 0; width: 100%; background: rgba(15,15,15,0.95); backdrop-filter: blur(12px); z-index: 3000; border-bottom: 1px solid #222; }
 .nav-container { max-width: 1200px; margin: auto; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; }
 .logo { font-family: 'Bodoni Moda', serif; font-size: 1.4rem; color: #AB7854; font-weight: bold; }
 .nav-links { display: flex; gap: 20px; list-style: none; }
 .nav-links a { text-decoration: none; color: #fff; font-size: 0.8rem; text-transform: uppercase; }
 
-/* MENU GRID */
+/* MENU CARDS - PREVENTING BLANDNESS */
 .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
 .menu-card {
     position: relative; background: #161616; padding: 30px; border-radius: 12px; 
@@ -53,3 +44,9 @@ h1, h2, h3 { font-family: 'Bodoni Moda', serif; color: #f5f5f5; }
 .menu-hover-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; filter: grayscale(100%); transition: 0.5s; z-index: 1; }
 .menu-card:hover .menu-hover-img { opacity: 0.5; filter: grayscale(0%); }
 .menu-card:hover { border-color: #AB7854; transform: translateY(-8px); }
+.menu-info { position: relative; z-index: 2; }
+.menu-info span { color: #AB7854; font-weight: bold; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }

@@ -1,5 +1,5 @@
 /* MASTER STYLESHEET: THE COFFEE BISTRO 
-   Full Version: Standardized Action Row & Desktop-Safe Mobile Scaling
+   Full Version: Isolated Mobile Scaling & Page-Specific Heights
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
@@ -18,7 +18,6 @@ body {
 
 h1, h2, h3 { font-family: 'Bodoni Moda', serif; letter-spacing: 1px; }
 
-/* DESKTOP CONTAINER: Stays exactly as it was */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -39,61 +38,38 @@ h1, h2, h3 { font-family: 'Bodoni Moda', serif; letter-spacing: 1px; }
 .nav-links { display: flex; gap: 30px; list-style: none; }
 .nav-links a { text-decoration: none; color: #FFF8E1; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; }
 
-/* --- CONTACT SECTION DESKTOP --- */
-.contact-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
-
-/* Force phone numbers to NOT be blue on mobile/desktop */
-.address-text a {
-    color: #F5F5F5 !important;
-    text-decoration: none !important;
-    pointer-events: auto;
+/* --- HERO & HOME SECTIONS --- */
+.hero { 
+    height: 100vh; display: flex; align-items: center; 
+    background: linear-gradient(135deg, #8D6E63 0%, #A1887F 50%, #BCAAA4 100%); 
 }
+.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); color: #FFF8E1; line-height: 1.3; word-spacing: 0.25em; }
+
+.philosophy-section { background: linear-gradient(to bottom, #BCAAA4, #A1887F); color: #3E2723; padding: 120px 0; }
+.features-section { background: linear-gradient(to bottom, #8D6E63, #7A5C52); padding: 120px 0; }
+.review-box { padding: 40px; background-color: #BCAAA4; border-radius: 15px; color: #3E2723; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+/* --- MENU PAGE --- */
+.menu-page-body { background-color: #211512; }
+.menu-card-floating { background: #BCAAA4; color: #3E2723; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 25px; transition: 0.4s ease; }
+.view-full-btn { display: inline-block; padding: 18px 45px; background-color: #3E2723 !important; color: #FFF8E1 !important; text-decoration: none !important; font-weight: bold; border-radius: 50px; margin-top: 40px; transition: 0.3s; border: none; }
+.view-full-btn:hover { background-color: #AB7854 !important; transform: scale(1.05); }
+
+/* --- SANCTUARY GRID --- */
+.sanctuary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+.shape-item { position: relative; overflow: hidden; border: 1px solid rgba(188, 170, 164, 0.4); transition: 0.8s; }
+.tilt-left { transform: rotate(-3deg); border-radius: 40px 10px 40px 10px; }
+.tilt-right { transform: rotate(3deg); border-radius: 10px 40px 10px 40px; }
+.round-large { border-radius: 60px; }
+.round-pill { border-radius: 100px; grid-column: span 3; height: 160px; margin-top: 20px; }
+.shape-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- CONTACT PAGE --- */
+.contact-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
+.address-text a { color: #F5F5F5 !important; text-decoration: none !important; font-weight: bold; }
 
 .action-links { display: flex; align-items: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
-
-.delivery-btn {
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none !important;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 150px;
-}
+.delivery-btn { padding: 14px 28px; border-radius: 8px; text-decoration: none !important; font-weight: bold; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; justify-content: center; min-width: 150px; }
 .zomato-btn { background-color: #E23744; color: white; }
 .swiggy-btn { background-color: #FC8019; color: white; }
-.insta-btn { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: white; }
-
-.map-circle-container { 
-    width: 450px; height: 450px; border-radius: 50%; 
-    overflow: hidden; border: 8px solid #BCAAA4; 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
-}
-
-/* --- FOOTER --- */
-.footer-espresso { background-color: #1B0B05; padding: 50px 5%; text-align: center; color: #BCAAA4; font-size: 0.85rem; letter-spacing: 2px; }
-
-/* --- MOBILE SPECIFIC CHANGES: ONLY triggered on small screens --- */
-@media (max-width: 992px) {
-    .container { 
-        padding: 150px 5% 100px; 
-        min-height: 95vh; /* Makes page fill the mobile screen */
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-    }
-    .contact-layout { grid-template-columns: 1fr; text-align: center; gap: 60px; }
-    
-    h1 { font-size: 3rem !important; } /* Make "CONTACT" bigger on phone */
-    .address-text { font-size: 1.2rem; }
-    
-    .map-circle-container { 
-        margin: 20px auto 0; 
-        width: 320px; 
-        height: 320px; 
-    }
-    .action-links { justify-content: center; }
-}
+.insta-btn

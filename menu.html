@@ -2,44 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atmosphere | The Coffee Bistro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,700;1,400&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>Menu | The Coffee Bistro</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="menu-page-body">
     <nav class="navbar"><div class="nav-container"><div class="logo">THE COFFEE BISTRO</div><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="contact.html">Contact</a></li></ul></div></nav>
 
     <div class="container reveal">
-        <h1 style="text-align: center; font-size: 3.5rem; color: #c6a15b; margin-bottom: 60px; letter-spacing: 5px;">SIGNATURE PIECES</h1>
+        <h1 style="text-align: center; font-size: 4rem; color: #FFF8E1; margin-bottom: 60px;">SIGNATURE PIECES</h1>
         
-        <div class="menu-blend-wrapper">
+        <div class="menu-blend-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px; align-items: center;">
             <div class="menu-items-group">
-                <div class="menu-item-blended">
-                    <h3>Velvet Latte</h3>
-                    <p>Double-shot espresso with silky micro-foam.</p>
-                    <span style="color: #c6a15b; font-weight: bold;">₹240</span>
+                <div style="border-bottom: 1px solid #8D6E63; padding-bottom: 20px; margin-bottom: 20px;">
+                    <h3 style="color: #BCAAA4;">Velvet Latte</h3>
+                    <p>₹240</p>
                 </div>
-                <div class="menu-item-blended">
-                    <h3>Kharghar Cold Brew</h3>
-                    <p>18-hour slow-steeped signature blend.</p>
-                    <span style="color: #c6a15b; font-weight: bold;">₹260</span>
-                </div>
-                <div class="menu-item-blended">
-                    <h3>Butter Croissant</h3>
-                    <p>Flaky, baked fresh daily with French butter.</p>
-                    <span style="color: #c6a15b; font-weight: bold;">₹180</span>
+                <div style="border-bottom: 1px solid #8D6E63; padding-bottom: 20px; margin-bottom: 20px;">
+                    <h3 style="color: #BCAAA4;">Kharghar Cold Brew</h3>
+                    <p>₹260</p>
                 </div>
             </div>
 
-            <div class="gallery-mosaic">
-                <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=400" class="mosaic-img">
-                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=400" class="mosaic-img">
-                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=400" class="mosaic-img">
-                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=400" class="mosaic-img">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=400" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=400" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;">
             </div>
         </div>
     </div>
+
+    <footer class="footer-espresso">
+        <p>© 2026 THE COFFEE BISTRO. ALL RIGHTS RESERVED.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,17 +1,30 @@
 /* MASTER STYLESHEET: THE COFFEE BISTRO 
-   Theme: Multi-Tone Brown (Editorial Shapes)
+   Theme: Multi-Tone Brown (Latte to Espresso)
+   Features: Sanctuary Gallery, Floating Cards, Circular Map, and Home Layouts
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
+/* --- GLOBAL RESET & BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth; 
+}
 
 body { 
     font-family: 'Montserrat', sans-serif; 
-    background-color: #211512; /* Rich Espresso Base */
+    background-color: #5D4037; /* Base Brown */
     color: #F5F5F5; 
-    line-height: 1.6; 
+    line-height: 1.8; 
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { 
+    font-family: 'Bodoni Moda', serif; 
+    letter-spacing: 1px; 
 }
 
 .container {
@@ -20,15 +33,14 @@ body {
     padding: 100px 5%;
 }
 
-/* NAVBAR: Blended Glassmorphism */
+/* --- NAVBAR: Medium Brown with Cream Text --- */
 .navbar { 
     position: fixed; 
     top: 0; 
     width: 100%; 
-    background: rgba(33, 21, 18, 0.9); 
-    backdrop-filter: blur(10px); 
+    background-color: #8D6E63; 
     z-index: 3000; 
-    border-bottom: 1px solid rgba(188, 170, 164, 0.2);
+    border-bottom: 1px solid #7A5C52; 
 }
 
 .nav-container { 
@@ -43,30 +55,82 @@ body {
 .logo { 
     font-family: 'Bodoni Moda', serif; 
     font-size: 1.5rem; 
-    color: #BCAAA4; 
+    color: #FFF8E1; 
+    font-weight: bold; 
     text-transform: uppercase; 
-    letter-spacing: 3px; 
 }
 
-.nav-links { display: flex; gap: 30px; list-style: none; }
-.nav-links a { text-decoration: none; color: #FFF8E1; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
+.nav-links { 
+    display: flex; 
+    gap: 30px; 
+    list-style: none; 
+}
 
-/* FLOATING MENU CARDS */
+.nav-links a { 
+    text-decoration: none; 
+    color: #FFF8E1; 
+    font-size: 0.95rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+}
+
+/* --- HERO SECTION --- */
+.hero { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    background: linear-gradient(135deg, #8D6E63 0%, #A1887F 50%, #BCAAA4 100%); 
+}
+
+.hero h1 { 
+    font-size: clamp(2.5rem, 8vw, 5rem); 
+    color: #FFF8E1; 
+    line-height: 1.3; 
+    word-spacing: 0.25em; 
+}
+
+/* --- PHILOSOPHY SECTION (Home Page) --- */
+.philosophy-section {
+    background: linear-gradient(to bottom, #BCAAA4, #A1887F);
+    color: #3E2723;
+}
+
+/* --- FEATURES/REVIEWS (Home Page) --- */
+.features-section {
+    background: linear-gradient(to bottom, #8D6E63, #7A5C52);
+    padding: 100px 0;
+}
+
+.review-box { 
+    padding: 40px; 
+    background-color: #BCAAA4; 
+    border-radius: 15px; 
+    color: #3E2723; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+}
+
+/* --- MENU PAGE: Espresso Theme --- */
+.menu-page-body { 
+    background-color: #211512; /* Rich Dark Espresso */
+}
+
+/* Floating Menu Cards */
 .menu-card-floating {
     background: #BCAAA4; 
     color: #3E2723;
     padding: 30px; 
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 25px; 
     transition: 0.4s ease;
-    flex: 1;
 }
 
 .menu-card-floating:hover { 
-    transform: translateY(-10px); 
+    transform: translateY(-12px); 
     background: #FFF8E1; 
 }
 
+/* View Full Menu Button */
 .view-full-btn {
     display: inline-block; 
     padding: 18px 45px;
@@ -79,7 +143,7 @@ body {
     transition: 0.3s;
 }
 
-/* THE SANCTUARY GRID - CUSTOM SHAPES */
+/* --- THE SANCTUARY GALLERY (Menu Page) --- */
 .sanctuary-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -94,7 +158,6 @@ body {
     transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-/* Specific Shapes from Reference */
 .tilt-left { transform: rotate(-3deg); border-radius: 40px 10px 40px 10px; }
 .tilt-right { transform: rotate(3deg); border-radius: 10px 40px 10px 40px; }
 .round-large { border-radius: 60px; }
@@ -107,22 +170,55 @@ body {
     transition: 1s ease;
 }
 
-.shape-item:hover .shape-img { transform: scale(1.1) rotate(0deg); }
+/* --- CONTACT SECTION --- */
+.contact-layout { 
+    display: grid; 
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 80px; 
+    align-items: center; 
+}
 
-/* FOOTER */
+.address-text { 
+    color: #FFF8E1 !important; 
+    font-size: 1.15rem; 
+    margin-bottom: 40px; 
+}
+
+.map-circle-container {
+    width: 450px; 
+    height: 450px; 
+    border-radius: 50%;
+    overflow: hidden; 
+    border: 8px solid #BCAAA4;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* --- FOOTER --- */
 .footer-espresso { 
+    background-color: #1B0B05; 
+    padding: 50px 5%; 
     text-align: center; 
-    padding: 60px; 
     color: #BCAAA4; 
-    font-size: 0.8rem; 
+    font-size: 0.85rem; 
     letter-spacing: 2px; 
 }
 
-/* REVEAL SYSTEM */
-.reveal { opacity: 0; transform: translateY(40px); transition: 1.2s ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+/* --- ANIMATIONS --- */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: 1.2s ease; 
+}
 
-@media (max-width: 900px) {
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .contact-layout { grid-template-columns: 1fr; text-align: center; }
+    .map-circle-container { margin: 40px auto 0; width: 320px; height: 320px; }
     .sanctuary-grid { grid-template-columns: 1fr; }
-    .round-pill { grid-column: span 1; border-radius: 40px; }
+    .round-pill { grid-column: span 1; border-radius: 40px; height: 200px; }
 }

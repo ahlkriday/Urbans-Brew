@@ -5,20 +5,35 @@
     <title>Menu | The Coffee Bistro</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #211512;">
-    <nav class="navbar"><div class="nav-container"><div class="logo">THE COFFEE BISTRO</div><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="contact.html">Contact</a></li></ul></div></nav>
+<body class="menu-page-body">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">THE COFFEE BISTRO</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="container reveal">
         <h1 style="text-align: center; font-size: 3.5rem; color: #FFF8E1; margin-bottom: 60px;">SIGNATURE PIECES</h1>
         
         <div style="max-width: 800px; margin: 0 auto;">
             <div class="menu-card-floating">
-                <div style="display: flex; justify-content: space-between;"><h3>Velvet Latte</h3><span>₹240</span></div>
+                <div style="display: flex; justify-content: space-between;">
+                    <h3>Velvet Latte</h3>
+                    <span>₹240</span>
+                </div>
                 <p style="font-size: 0.9rem; opacity: 0.8;">Double-shot espresso with silky micro-foam.</p>
             </div>
 
             <div class="menu-card-floating">
-                <div style="display: flex; justify-content: space-between;"><h3>Kharghar Cold Brew</h3><span>₹260</span></div>
+                <div style="display: flex; justify-content: space-between;">
+                    <h3>Kharghar Cold Brew</h3>
+                    <span>₹260</span>
+                </div>
                 <p style="font-size: 0.9rem; opacity: 0.8;">18-hour slow-steeped signature blend.</p>
             </div>
 
@@ -27,15 +42,28 @@
             </div>
         </div>
 
-        <div class="gallery-grid-refined">
-            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=400" class="gallery-img-refined">
-            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=400" class="gallery-img-refined">
-            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=400" class="gallery-img-refined">
-            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=400" class="gallery-img-refined">
+        <h2 style="text-align: center; font-size: 1rem; letter-spacing: 5px; color: #BCAAA4; margin: 100px 0 40px; text-transform: uppercase;">The Lookbook</h2>
+        
+        <div class="editorial-gallery">
+            <div class="gallery-item item-v-1 reveal">
+                <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=800" class="gallery-img">
+            </div>
+            <div class="gallery-item item-h-1 reveal">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800" class="gallery-img">
+            </div>
+            <div class="gallery-item item-s-1 reveal">
+                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=800" class="gallery-img">
+            </div>
+            <div class="gallery-item item-wide reveal">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200" class="gallery-img">
+            </div>
         </div>
     </div>
 
-    <footer class="footer-espresso"><p>© THE COFFEE BISTRO. ALL RIGHTS RESERVED.</p></footer>
+    <footer class="footer-espresso">
+        <p>© THE COFFEE BISTRO. ALL RIGHTS RESERVED.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
